@@ -2,7 +2,7 @@ FROM nginx:latest
 MAINTAINER zzswang@gmail.com
 
 ENV BASE_URL="" \
-    APP_DIR = "/app"
+    APP_DIR="/app"
 
 RUN mkdir -p ${APP_DIR}
 COPY nginx-site.conf /etc/nginx/conf.d/mysite.template
