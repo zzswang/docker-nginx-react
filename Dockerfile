@@ -6,11 +6,11 @@ ENV BASE_URL="" \
 
 RUN mkdir -p ${APP_DIR}
 COPY nginx-site.conf /etc/nginx/conf.d/mysite.template
-COPY start-nginx.sh /usr/local/bin/start-docker.sh
-RUN chmod u+x /usr/local/bin/start-docker.sh
+COPY start-nginx.sh /usr/local/bin/start-nginx
+RUN chmod u+x /usr/local/bin/start-nginx
 
 EXPOSE 80/tcp
 VOLUME ["${APP_DIR}"]
 WORKDIR ${APP_DIR}
 
-ENTRYPOINT "/usr/local/bin/start-docker.sh"
+ENTRYPOINT ["start-nginx"]
