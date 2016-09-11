@@ -3,15 +3,18 @@ docker-nginx-react
 
 ## What is this?
 
-Run react single page app within a nginx server
+Support to run a react single page app within nginx server, support push state by default. Support base url environment.
 
 ## Quick start
 
 ```
 docker run -d --name myapp -p 80:80 zzswang/nginx-react
+
+// with base url
+docker run -d --name myapp -e BASE_URL="/subpath" -p 80:80 zzswang/nginx-react
 ```
 
-**note**: It will start the pre-configured cnpmjs.org server. You could use `open http://localhost:7002` to visit the homepage.
+**note**: If with base url, you can put your web app under a sub path, like http://your.domain/subpath/webapp/
 
 
 ## License
