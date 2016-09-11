@@ -1,5 +1,5 @@
 {
-  "name": "nginx-react",
+  "name": "docker-nginx-react",
   "version": "0.1.0",
   "description": "servering react web app",
   "main": "index.js",
