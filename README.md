@@ -8,10 +8,11 @@ Support to run a react single page app within nginx server, support push state b
 ## Quick start
 
 ```
-docker run -d --name myapp -p 80:80 zzswang/nginx-react
+docker run -d --name myapp -p 80:80 -v /your/webapp:/app zzswang/nginx-react
 
 // with base url
-docker run -d --name myapp -e BASE_URL="/subpath" -p 80:80 zzswang/nginx-react
+docker run -d --name myapp -p 80:80 -v /your/webapp:/app \ 
+    -e BASE_URL="/subpath" zzswang/nginx-react
 ```
 
 **note**: If with base url, you can put your web app under a sub path, like http://your.domain/subpath/webapp/
