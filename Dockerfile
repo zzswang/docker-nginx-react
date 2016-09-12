@@ -2,7 +2,9 @@ FROM nginx:latest
 MAINTAINER zzswang@gmail.com
 
 ENV BASE_URL="" \
-    APP_DIR="/app"
+    APP_DIR="/app" \
+    API_REGEX="defaultnomeaningregexmustnotmatch" \
+    API_GATEWAY="https://api.36node.com"
 
 RUN mkdir -p ${APP_DIR}
 COPY nginx-site.conf /etc/nginx/conf.d/mysite.template
