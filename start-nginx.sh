@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/usr/bin/with-contenv sh
 
 echo "setting envrionment..."
-echo "BASE_URL": $BASE_URL
-envsubst '$BASE_URL $API_REGEX $API_GATEWAY' < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf
-nginx -g "daemon off;"
+echo "APP_DIR": $BASE_URL
+echo "API_PLACEHOLDER": $API_PLACEHOLDER
+echo "API_GATEWAY": $API_GATEWAY
+envsubst '$APP_DIR $API_PLACEHOLDER $API_GATEWAY' < /etc/nginx/conf.d/app.conf.template > /etc/nginx/conf.d/default.conf
+
+# start nginx
+nginx
 exec "$@"
