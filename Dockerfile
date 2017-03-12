@@ -2,7 +2,7 @@ FROM smebberson/alpine-nginx
 MAINTAINER zzswang@gmail.com
 
 ENV APP_DIR="/app" \
-    API_PLACEHOLDER="/defaultnomeaningregexmustnotmatch" \
+    API_PLACEHOLDER="/api" \
     API_GATEWAY="https://api.36node.com"
 
 RUN mkdir -p ${APP_DIR} \
