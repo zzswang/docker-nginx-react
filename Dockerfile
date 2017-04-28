@@ -36,5 +36,4 @@ COPY start-nginx.sh /etc/services.d/nginx/run
 # RUN chmod u+x /etc/services.d/nginx/run
 
 EXPOSE 80 443
-VOLUME ["${APP_DIR}"]
 WORKDIR ${APP_DIR}
