@@ -1,39 +1,21 @@
-FROM smebberson/alpine-nginx
-MAINTAINER zzswang@gmail.com
+FROM nginx:alpine
+LABEL maintainer="zzswang@gmail.com"
 
-ENV APP_DIR="/app" \
-    API_PLACEHOLDER="/api" \
-    API_GATEWAY="https://api.36node.com"
-
-RUN mkdir -p ${APP_DIR} \
-      \
-    	# Bring in gettext so we can get `envsubst`, then throw
-    	# the rest away. To do this, we need to install `gettext`
-    	# then move `envsubst` out of the way so `gettext` can
-    	# be deleted completely, then move `envsubst` back.
-    	&& apk add --no-cache --virtual .gettext gettext \
-    	&& mv /usr/bin/envsubst /tmp/ \
-    	\
-    	&& export runDeps="$( \
-    		scanelf --needed --nobanner /usr/sbin/nginx /usr/lib/nginx/modules/*.so /tmp/envsubst \
-    			| awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
-    			| sort -u \
-    			| xargs -r apk info --installed \
-    			| sort -u \
-    	)" \
-    	&& apk add --no-cache --virtual .nginx-rundeps ${runDeps} \
-    	# && apk del .build-deps \
-    	&& apk del .gettext \
-    	&& mv /tmp/envsubst /usr/local/bin/ \
-      \
-      # forward request and error logs to docker log collector
-      && ln -sf /dev/stdout /var/log/nginx/access.log \
-      && ln -sf /dev/stderr /var/log/nginx/error.log
+ENV DEBUG=off \
+	APP_DIR=/app \
+	APP_PATH_PREFIX=/aSubSiteInParentDomainUseThisPath \
+	APP_API_PLACEHOLDER=/allRequestStartOfthisPathIsAnApiCall \
+	APP_API_GATEWAY="https://api.36node.com" \
+	CLIENT_BODY_TIMEOUT=10 \
+	CLIENT_HEADER_TIMEOUT=10 \
+	CLIENT_MAX_BODY_SIZE=1024
 
 COPY nginx-site.conf /etc/nginx/conf.d/app.conf.template
-COPY start-nginx.sh /etc/services.d/nginx/run
+COPY start-nginx.sh /usr/sbin/start
 
-# RUN chmod u+x /etc/services.d/nginx/run
+RUN chmod u+x /usr/sbin/start
 
 EXPOSE 80 443
 WORKDIR ${APP_DIR}
+
+CMD [ "start" ]
