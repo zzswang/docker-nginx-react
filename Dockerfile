@@ -8,7 +8,9 @@ ENV DEBUG=off \
 	APP_API_GATEWAY="https://api.36node.com" \
 	CLIENT_BODY_TIMEOUT=10 \
 	CLIENT_HEADER_TIMEOUT=10 \
-	CLIENT_MAX_BODY_SIZE=1024
+	CLIENT_MAX_BODY_SIZE=1024 \
+	WHITE_LIST_IP=(172.17.0.1)|(192.168.0.25) \
+	WHITE_LIST=off
 
 COPY nginx-site.conf /etc/nginx/conf.d/app.conf.template
 COPY start-nginx.sh /usr/sbin/start
