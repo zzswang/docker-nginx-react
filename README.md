@@ -17,12 +17,12 @@ Two envrionment variable name are changed:
 * API_GATEWAY => APP_API_GATEWAY
 * API_PLACEHOLDER => APP_API_PLACEHOLDER
 
-For all envrionments start with APP_, it will dynamically subset while server
+For all envrionments start with APP\_, it will dynamically subset while server
 starting. You can put those envrionments in html/js/css files, we will handle it
 gracefully.
 
 The above two envrionments are used by nginx, but it may also be interested with
-development. So we put APP_ prefix on them, make sure you can use them in your
+development. So we put APP\_ prefix on them, make sure you can use them in your
 code.
 
 ## Quick start
@@ -68,6 +68,8 @@ docker run -d -p 80:80 your_image
 * CLIENT_BODY_TIMEOUT: body timeout.
 * CLIENT_HEADER_TIMEOUT: header timeout.
 * CLIENT_MAX_BODY_SIZE: maximum request body size.
+* WHITE_LIST: on or off, turn on white_list feature if on, default off.
+* WHITE_LIST_IP: ip you wang put through, set it as `(172.17.0.1)|(192.168.0.25)`.
 
 ### examples
 
