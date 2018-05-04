@@ -11,7 +11,7 @@ echo "CLIENT_HEADER_TIMEOUT": $CLIENT_HEADER_TIMEOUT
 echo "CLIENT_MAX_BODY_SIZE": $CLIENT_MAX_BODY_SIZE
 
 # replace env for nginx conf
-envsubst '$DEBUG $APP_DIR $APP_PATH_PREFIX $APP_API_PLACEHOLDER $APP_API_GATEWAY $CLIENT_BODY_TIMEOUT $CLIENT_HEADER_TIMEOUT $CLIENT_MAX_BODY_SIZE' < /etc/nginx/conf.d/app.conf.template > /etc/nginx/conf.d/default.conf
+envsubst '$WHITE_LIST $WHITE_LIST_IP $DEBUG $APP_DIR $APP_PATH_PREFIX $APP_API_PLACEHOLDER $APP_API_GATEWAY $CLIENT_BODY_TIMEOUT $CLIENT_HEADER_TIMEOUT $CLIENT_MAX_BODY_SIZE' < /etc/nginx/conf.d/app.conf.template > /etc/nginx/conf.d/default.conf
 
 # find all env start with APP_
 export SUBS=$(echo $(env | cut -d= -f1 | grep "^APP_" | sed -e 's/^/\$/'))
