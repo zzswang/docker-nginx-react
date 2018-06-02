@@ -17,7 +17,7 @@ envsubst '$WHITE_LIST $WHITE_LIST_IP $DEBUG $APP_DIR $APP_PATH_PREFIX $APP_API_P
 export SUBS=$(echo $(env | cut -d= -f1 | grep "^APP_" | sed -e 's/^/\$/'))
 
 # replace above envs
-echo "inject envrionments ..."
+echo "inject environments ..."
 echo $SUBS
 for f in `find /usr/share/nginx/html -regex ".*\.\(js\|css\|html\|json\|map\)"`; do envsubst "$SUBS" < $f > $f.tmp; mv $f.tmp $f; done
 
