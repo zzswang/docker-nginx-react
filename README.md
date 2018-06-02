@@ -12,16 +12,16 @@ other framework.
 
 ## Migrating from 0.2.0
 
-Two envrionment variable name are changed:
+Two environment variables are changed:
 
 * API_GATEWAY => APP_API_GATEWAY
 * API_PLACEHOLDER => APP_API_PLACEHOLDER
 
-For all envrionments start with APP\_, it will dynamically subset while server
+For all environments start with APP\_, it will dynamically subset while server
 starting. You can put those envrionments in html/js/css files, we will handle it
 gracefully.
 
-The above two envrionments are used by nginx, but it may also be interested with
+The above two environments are used by nginx, but it may also be interested with
 development. So we put APP\_ prefix on them, make sure you can use them in your
 code.
 
@@ -56,7 +56,7 @@ Then just publish your images, and run the container from it.
 docker run -d -p 80:80 your_image
 ```
 
-## Envrionments
+## Environments
 
 * APP_DIR: the root direactory of your app running in the docker container,
   usally you do not need to change it.
