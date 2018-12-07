@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/zzswang/docker-nginx-react/compare/v0.3.0...v0.4.0) (2018-12-07)
+
+
+### Bug Fixes
+
+* nginx if condition break try_files ([#7](https://github.com/zzswang/docker-nginx-react/issues/7)) ([8777e4c](https://github.com/zzswang/docker-nginx-react/commit/8777e4c))
+* 修复白名单关闭时，访问不存在的url不会重定向到index.html的问题 ([bd8bc64](https://github.com/zzswang/docker-nginx-react/commit/bd8bc64)), closes [#4](https://github.com/zzswang/docker-nginx-react/issues/4)
+
+
+### Features
+
+* add white list ([4a1433a](https://github.com/zzswang/docker-nginx-react/commit/4a1433a)), closes [#2](https://github.com/zzswang/docker-nginx-react/issues/2)
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/zzswang/docker-nginx-react/compare/v0.2.0...v0.3.0) (2017-12-07)
 
