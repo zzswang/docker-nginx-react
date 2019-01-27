@@ -24,7 +24,7 @@ export SUBS=$(echo $(env | cut -d= -f1 | grep "^APP_" | sed -e 's/^/\$/'))
 # replace above envs
 echo "inject environments ..."
 echo $SUBS
-for f in `find /usr/share/nginx/html -regex ".*\.\(js\|css\|html\|json\|map\)"`; do envsubst "$SUBS" < $f > $f.tmp; mv $f.tmp $f; done
+for f in `find "$APP_DIR" -regex ".*\.\(js\|css\|html\|json\|map\)"`; do envsubst "$SUBS" < $f > $f.tmp; mv $f.tmp $f; done
 
 # start nginx
 nginx -g 'daemon off;'
