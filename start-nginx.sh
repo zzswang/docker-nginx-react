@@ -24,6 +24,15 @@ export SUBS=$(echo $(env | cut -d= -f1 | grep "^APP_" | sed -e 's/^/\$/'))
 # replace above envs
 echo "inject environments ..."
 echo $SUBS
+
+for f in `find "$APP_DIR" -regex ".*\.\(html\)"`; do 
+    for e in $SUBS; do
+        eName=$(echo $e | sed -e 's/^\$//');
+        sed -i "/^[ ]*'use runtime env';[ ]*$/a window._36node[\"$eName\"]=\"$e\";" $f
+    done
+    sed -i "/^[ ]*'use runtime env';[ ]*$/a window._36node=window._36node||{};" $f
+done
+
 for f in `find "$APP_DIR" -regex ".*\.\(js\|css\|html\|json\|map\)"`; do envsubst "$SUBS" < $f > $f.tmp; mv $f.tmp $f; done
 
 # start nginx
