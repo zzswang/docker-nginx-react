@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/zzswang/docker-nginx-react/compare/v0.4.0...v0.5.0) (2019-05-05)
+
+
+### Bug Fixes
+
+* add png to gzip types ([#9](https://github.com/zzswang/docker-nginx-react/issues/9)) ([457f98a](https://github.com/zzswang/docker-nginx-react/commit/457f98a))
+* enable gzip ([#9](https://github.com/zzswang/docker-nginx-react/issues/9)) ([60db6c0](https://github.com/zzswang/docker-nginx-react/commit/60db6c0))
+* substitute env variables in app folder ([#13](https://github.com/zzswang/docker-nginx-react/issues/13)) ([b06f873](https://github.com/zzswang/docker-nginx-react/commit/b06f873))
+
+
+### Features
+
+* support 'use runtime env'; ([a7aa7fe](https://github.com/zzswang/docker-nginx-react/commit/a7aa7fe))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/zzswang/docker-nginx-react/compare/v0.3.0...v0.4.0) (2018-12-07)
 
