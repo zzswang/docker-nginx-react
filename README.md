@@ -75,7 +75,7 @@ docker run -d -p 80:80 your_image
 
 #### 'use runtime env';
 
-If you want to automatically inject all environment variables start with `APP_` to an HTML file during container startup，you can add one line `'use runtime env';` to your `index.html`
+If you want to automatically inject all environment variables start with `REACT_APP_` to an HTML file during container startup，you can add one line `'use runtime env';` to your `index.html`
 ```html
 <script>
   (function initRuntimeConfig() {
@@ -89,9 +89,8 @@ and the code block in  `index.html` file will be replaced to
   (function initRuntimeConfig() {
     'use runtime env';
 window._36node=window._36node||{};
-window._36node["APP_DIR"]="/app";
-window._36node["APP_VAR2"]="var2";
-window._36node["APP_VAR1"]="var1";
+window._36node["REACT_APP_VAR2"]="var2";
+window._36node["REACT_APP_VAR1"]="var1";
   })();
 </script>
 ```
