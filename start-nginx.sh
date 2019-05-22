@@ -25,15 +25,22 @@ export SUBS=$(echo $(env | cut -d= -f1 | grep "^APP_" | sed -e 's/^/\$/'))
 echo "inject environments ..."
 echo $SUBS
 
+for f in `find "$APP_DIR" -regex ".*\.\(js\|css\|html\|json\|map\)"`; do envsubst "$SUBS" < $f > $f.tmp; mv $f.tmp $f; done
+
+# inject REACT_APP envs
+export REACT_SUBS=$(echo $(env | cut -d= -f1 | grep "^REACT_APP_" | sed -e 's/^/\$/'))
+echo "inject react app environments ..."
+echo $REACT_SUBS
+
 for f in `find "$APP_DIR" -regex ".*\.\(html\)"`; do 
-    for e in $SUBS; do
+    for e in $REACT_SUBS; do
         eName=$(echo $e | sed -e 's/^\$//');
         sed -i "/^[ ]*'use runtime env';[ ]*$/a window._36node[\"$eName\"]=\"$e\";" $f
     done
     sed -i "/^[ ]*'use runtime env';[ ]*$/a window._36node=window._36node||{};" $f
 done
 
-for f in `find "$APP_DIR" -regex ".*\.\(js\|css\|html\|json\|map\)"`; do envsubst "$SUBS" < $f > $f.tmp; mv $f.tmp $f; done
+for f in `find "$APP_DIR" -regex ".*\.\(html\)"`; do envsubst "$REACT_SUBS" < $f > $f.tmp; mv $f.tmp $f; done
 
 # start nginx
 nginx -g 'daemon off;'
