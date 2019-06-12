@@ -1,6 +1,20 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.6.0](https://github.com/zzswang/docker-nginx-react/compare/v0.5.0...v0.6.0) (2019-06-12)
+
+
+### Bug Fixes
+
+* security alerts ([6233b82](https://github.com/zzswang/docker-nginx-react/commit/6233b82))
+
+
+### Features
+
+* support 'use runtime env' for REACT_APP_ envs ([4c7a1e7](https://github.com/zzswang/docker-nginx-react/commit/4c7a1e7))
+
+
 
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/zzswang/docker-nginx-react/compare/v0.4.0...v0.5.0) (2019-05-05)
