@@ -33,6 +33,7 @@ echo "inject react app environments ..."
 echo $REACT_SUBS
 
 for f in `find "$APP_DIR" -regex ".*\.\(html\)"`; do 
+    sed -i "s/\"use runtime env\";/'use runtime env';/g" $f
     for e in $REACT_SUBS; do
         eName=$(echo $e | sed -e 's/^\$//');
         sed -i "s/'use runtime env';/'use runtime env'; window._36node[\"$eName\"]=\"$e\";/g" $f
