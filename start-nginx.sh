@@ -35,9 +35,9 @@ echo $REACT_SUBS
 for f in `find "$APP_DIR" -regex ".*\.\(html\)"`; do 
     for e in $REACT_SUBS; do
         eName=$(echo $e | sed -e 's/^\$//');
-        sed -i "/^[ ]*'use runtime env';[ ]*$/a window._36node[\"$eName\"]=\"$e\";" $f
+        sed -i "s/'use runtime env';/'use runtime env'; window._36node[\"$eName\"]=\"$e\";/g" $f
     done
-    sed -i "/^[ ]*'use runtime env';[ ]*$/a window._36node=window._36node||{};" $f
+    sed -i "s/'use runtime env';/'use runtime env'; window._36node=window._36node||{};/g" $f
 done
 
 for f in `find "$APP_DIR" -regex ".*\.\(html\)"`; do envsubst "$REACT_SUBS" < $f > $f.tmp; mv $f.tmp $f; done
