@@ -1,6 +1,15 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.9.0](https://github.com/zzswang/docker-nginx-react/compare/v0.8.0...v0.9.0) (2019-11-21)
+
+
+### Features
+
+* add cache ([8b3a666](https://github.com/zzswang/docker-nginx-react/commit/8b3a666))
+
+
 
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/zzswang/docker-nginx-react/compare/v0.7.0...v0.8.0) (2019-07-23)
