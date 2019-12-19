@@ -2,6 +2,7 @@
 
 echo "setting nginx conf ..."
 echo "DEBUG": $DEBUG
+echo "REACT_APP_VERSION": $REACT_APP_VERSION
 echo "APP_DIR": $APP_DIR
 echo "APP_PATH_PREFIX": $APP_PATH_PREFIX
 echo "APP_API_PLACEHOLDER": $APP_API_PLACEHOLDER
@@ -11,7 +12,7 @@ echo "CLIENT_HEADER_TIMEOUT": $CLIENT_HEADER_TIMEOUT
 echo "CLIENT_MAX_BODY_SIZE": $CLIENT_MAX_BODY_SIZE
 
 # replace env for nginx conf
-envsubst '$WHITE_LIST $WHITE_LIST_IP $DEBUG $APP_DIR $APP_PATH_PREFIX $APP_API_PLACEHOLDER $APP_API_GATEWAY $CLIENT_BODY_TIMEOUT $CLIENT_HEADER_TIMEOUT $CLIENT_MAX_BODY_SIZE' < /etc/nginx/conf.d/app.conf.template > /etc/nginx/conf.d/default.conf
+envsubst '$WHITE_LIST $WHITE_LIST_IP $DEBUG $REACT_APP_VERSION $APP_DIR $APP_PATH_PREFIX $APP_API_PLACEHOLDER $APP_API_GATEWAY $CLIENT_BODY_TIMEOUT $CLIENT_HEADER_TIMEOUT $CLIENT_MAX_BODY_SIZE' < /etc/nginx/conf.d/app.conf.template > /etc/nginx/conf.d/default.conf
 
 if [ ${WHITE_LIST} = 'off' ]; then
     # delete white list config
