@@ -2,6 +2,7 @@ FROM nginx:alpine
 LABEL maintainer="zzswang@gmail.com"
 
 ENV DEBUG=off \
+  REACT_APP_VERSION=0.0.0 \
   APP_DIR=/app \
   APP_PATH_PREFIX=/aSubSiteInParentDomainUseThisPath \
   APP_API_PLACEHOLDER=/allRequestStartOfthisPathIsAnApiCall \
