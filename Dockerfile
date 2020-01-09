@@ -1,8 +1,10 @@
 FROM nginx:alpine
 LABEL maintainer="zzswang@gmail.com"
 
+ARG APP_VERSION
+
 ENV DEBUG=off \
-  APP_VERSION=0.0.0 \
+  APP_VERSION=${APP_VERSION:-0.0.0} \
   APP_DIR=/app \
   APP_PATH_PREFIX=/aSubSiteInParentDomainUseThisPath \
   APP_API_PLACEHOLDER=/allRequestStartOfthisPathIsAnApiCall \
