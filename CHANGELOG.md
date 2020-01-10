@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.4](https://github.com/zzswang/docker-nginx-react/compare/v0.10.3...v0.10.4) (2020-01-10)
+
+
+### Bug Fixes
+
+* remove arg app_version in base image ([4663644](https://github.com/zzswang/docker-nginx-react/commit/4663644))
+
+
+
 ### [0.10.3](https://github.com/zzswang/docker-nginx-react/compare/v0.10.2...v0.10.3) (2020-01-09)
 
 
