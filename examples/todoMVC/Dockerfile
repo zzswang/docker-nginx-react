@@ -1,8 +1,8 @@
-FROM zzswang/docker-nginx-react:latest
+FROM zzswang/docker-nginx-react:v0.10.4
 
-ARG APP_VERSION
+ARG VERSION
 
-ENV APP_VERSION=${APP_VERSION:-0.0.0} \
+ENV APP_VERSION=${VERSION} \
   APP_GREETINGS="'Hello World'"
 
 ## Suppose your app is in the dist directory.
