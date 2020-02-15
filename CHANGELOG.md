@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.7](https://github.com/zzswang/docker-nginx-react/compare/v0.10.6...v0.10.7) (2020-02-15)
+
+
+### Bug Fixes
+
+* try_files with directory, close [#24](https://github.com/zzswang/docker-nginx-react/issues/24) ([5f36be4](https://github.com/zzswang/docker-nginx-react/commit/5f36be4))
+
+
+
 ### [0.10.6](https://github.com/zzswang/docker-nginx-react/compare/v0.10.5...v0.10.6) (2020-01-11)
 
 
