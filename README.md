@@ -1,4 +1,6 @@
-# docker-nginx-react
+# **DEPRECATED** - move to [36node/docker-nginx-react](https://github.com/36node/docker-nginx-react)
+
+docker-nginx-react
 
 ## What is this
 
